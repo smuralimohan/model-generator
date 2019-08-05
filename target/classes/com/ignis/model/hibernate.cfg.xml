@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <mapping resource="com/ignis/model/Layout.hbm.xml"/>
+        <mapping resource="com/ignis/model/EstablishmentAudit.hbm.xml"/>
+        <mapping resource="com/ignis/model/EntityAudit.hbm.xml"/>
+        <mapping resource="com/ignis/model/BusinessOwner.hbm.xml"/>
+        <mapping resource="com/ignis/model/StaffAudit.hbm.xml"/>
+        <mapping resource="com/ignis/model/Role.hbm.xml"/>
+        <mapping resource="com/ignis/model/BusinessOwnerEntityAudit.hbm.xml"/>
+        <mapping resource="com/ignis/model/Establishment.hbm.xml"/>
+        <mapping resource="com/ignis/model/SysuserAudit.hbm.xml"/>
+        <mapping resource="com/ignis/model/Staff.hbm.xml"/>
+        <mapping resource="com/ignis/model/BusinessOwnerEntity.hbm.xml"/>
+        <mapping resource="com/ignis/model/BusinessOwnerAudit.hbm.xml"/>
+        <mapping resource="com/ignis/model/LayoutAudit.hbm.xml"/>
+        <mapping resource="com/ignis/model/Entity.hbm.xml"/>
+        <mapping resource="com/ignis/model/Sysuser.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
