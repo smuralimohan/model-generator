@@ -1,6 +1,7 @@
 package com.ignis.model;
-// Generated 4 Aug, 2019 8:15:16 PM by Hibernate Tools 5.4.3.Final
+// Generated 17 Aug, 2019 12:44:50 AM by Hibernate Tools 5.4.3.Final
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,12 +13,17 @@ public class Establishment implements java.io.Serializable {
 
 	private long id;
 	private Entity entity;
-	private Layout layout;
 	private Integer establishmentNo;
 	private String address;
+	private Serializable location;
+	private Serializable cuisineTypes;
 	private Date updatedAt;
 	private Long updatedBy;
 	private Set staffs = new HashSet(0);
+	private Set kitchenMenus = new HashSet(0);
+	private Set establishmentLayouts = new HashSet(0);
+	private Set reviews = new HashSet(0);
+	private Set barMenus = new HashSet(0);
 
 	public Establishment() {
 	}
@@ -26,16 +32,22 @@ public class Establishment implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Establishment(long id, Entity entity, Layout layout, Integer establishmentNo, String address, Date updatedAt,
-			Long updatedBy, Set staffs) {
+	public Establishment(long id, Entity entity, Integer establishmentNo, String address, Serializable location,
+			Serializable cuisineTypes, Date updatedAt, Long updatedBy, Set staffs, Set kitchenMenus,
+			Set establishmentLayouts, Set reviews, Set barMenus) {
 		this.id = id;
 		this.entity = entity;
-		this.layout = layout;
 		this.establishmentNo = establishmentNo;
 		this.address = address;
+		this.location = location;
+		this.cuisineTypes = cuisineTypes;
 		this.updatedAt = updatedAt;
 		this.updatedBy = updatedBy;
 		this.staffs = staffs;
+		this.kitchenMenus = kitchenMenus;
+		this.establishmentLayouts = establishmentLayouts;
+		this.reviews = reviews;
+		this.barMenus = barMenus;
 	}
 
 	public long getId() {
@@ -54,14 +66,6 @@ public class Establishment implements java.io.Serializable {
 		this.entity = entity;
 	}
 
-	public Layout getLayout() {
-		return this.layout;
-	}
-
-	public void setLayout(Layout layout) {
-		this.layout = layout;
-	}
-
 	public Integer getEstablishmentNo() {
 		return this.establishmentNo;
 	}
@@ -76,6 +80,22 @@ public class Establishment implements java.io.Serializable {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public Serializable getLocation() {
+		return this.location;
+	}
+
+	public void setLocation(Serializable location) {
+		this.location = location;
+	}
+
+	public Serializable getCuisineTypes() {
+		return this.cuisineTypes;
+	}
+
+	public void setCuisineTypes(Serializable cuisineTypes) {
+		this.cuisineTypes = cuisineTypes;
 	}
 
 	public Date getUpdatedAt() {
@@ -100,6 +120,38 @@ public class Establishment implements java.io.Serializable {
 
 	public void setStaffs(Set staffs) {
 		this.staffs = staffs;
+	}
+
+	public Set getKitchenMenus() {
+		return this.kitchenMenus;
+	}
+
+	public void setKitchenMenus(Set kitchenMenus) {
+		this.kitchenMenus = kitchenMenus;
+	}
+
+	public Set getEstablishmentLayouts() {
+		return this.establishmentLayouts;
+	}
+
+	public void setEstablishmentLayouts(Set establishmentLayouts) {
+		this.establishmentLayouts = establishmentLayouts;
+	}
+
+	public Set getReviews() {
+		return this.reviews;
+	}
+
+	public void setReviews(Set reviews) {
+		this.reviews = reviews;
+	}
+
+	public Set getBarMenus() {
+		return this.barMenus;
+	}
+
+	public void setBarMenus(Set barMenus) {
+		this.barMenus = barMenus;
 	}
 
 }

@@ -1,5 +1,5 @@
 package com.ignis.model;
-// Generated 4 Aug, 2019 8:15:16 PM by Hibernate Tools 5.4.3.Final
+// Generated 17 Aug, 2019 12:44:50 AM by Hibernate Tools 5.4.3.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -15,7 +15,8 @@ public class Layout implements java.io.Serializable {
 	private byte[] image;
 	private Date updatedAt;
 	private Long updatedBy;
-	private Set establishments = new HashSet(0);
+	private Set establishmentLayouts = new HashSet(0);
+	private Set diningTables = new HashSet(0);
 
 	public Layout() {
 	}
@@ -24,13 +25,15 @@ public class Layout implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Layout(long id, String name, byte[] image, Date updatedAt, Long updatedBy, Set establishments) {
+	public Layout(long id, String name, byte[] image, Date updatedAt, Long updatedBy, Set establishmentLayouts,
+			Set diningTables) {
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.updatedAt = updatedAt;
 		this.updatedBy = updatedBy;
-		this.establishments = establishments;
+		this.establishmentLayouts = establishmentLayouts;
+		this.diningTables = diningTables;
 	}
 
 	public long getId() {
@@ -73,12 +76,20 @@ public class Layout implements java.io.Serializable {
 		this.updatedBy = updatedBy;
 	}
 
-	public Set getEstablishments() {
-		return this.establishments;
+	public Set getEstablishmentLayouts() {
+		return this.establishmentLayouts;
 	}
 
-	public void setEstablishments(Set establishments) {
-		this.establishments = establishments;
+	public void setEstablishmentLayouts(Set establishmentLayouts) {
+		this.establishmentLayouts = establishmentLayouts;
+	}
+
+	public Set getDiningTables() {
+		return this.diningTables;
+	}
+
+	public void setDiningTables(Set diningTables) {
+		this.diningTables = diningTables;
 	}
 
 }

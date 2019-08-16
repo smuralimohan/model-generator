@@ -1,5 +1,5 @@
 package com.ignis.model;
-// Generated 4 Aug, 2019 8:15:16 PM by Hibernate Tools 5.4.3.Final
+// Generated 17 Aug, 2019 12:44:50 AM by Hibernate Tools 5.4.3.Final
 
 import java.util.Date;
 
@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class StaffAuditId implements java.io.Serializable {
 
+	private Character action;
 	private long id;
 	private String username;
 	private String passhash;
@@ -26,8 +27,9 @@ public class StaffAuditId implements java.io.Serializable {
 		this.establishmentId = establishmentId;
 	}
 
-	public StaffAuditId(long id, String username, String passhash, String firstName, String lastName, String address,
-			long establishmentId, Date updatedAt, Long updatedBy) {
+	public StaffAuditId(Character action, long id, String username, String passhash, String firstName, String lastName,
+			String address, long establishmentId, Date updatedAt, Long updatedBy) {
+		this.action = action;
 		this.id = id;
 		this.username = username;
 		this.passhash = passhash;
@@ -37,6 +39,14 @@ public class StaffAuditId implements java.io.Serializable {
 		this.establishmentId = establishmentId;
 		this.updatedAt = updatedAt;
 		this.updatedBy = updatedBy;
+	}
+
+	public Character getAction() {
+		return this.action;
+	}
+
+	public void setAction(Character action) {
+		this.action = action;
 	}
 
 	public long getId() {
@@ -120,7 +130,9 @@ public class StaffAuditId implements java.io.Serializable {
 			return false;
 		StaffAuditId castOther = (StaffAuditId) other;
 
-		return (this.getId() == castOther.getId())
+		return ((this.getAction() == castOther.getAction()) || (this.getAction() != null
+				&& castOther.getAction() != null && this.getAction().equals(castOther.getAction())))
+				&& (this.getId() == castOther.getId())
 				&& ((this.getUsername() == castOther.getUsername()) || (this.getUsername() != null
 						&& castOther.getUsername() != null && this.getUsername().equals(castOther.getUsername())))
 				&& ((this.getPasshash() == castOther.getPasshash()) || (this.getPasshash() != null
@@ -141,6 +153,7 @@ public class StaffAuditId implements java.io.Serializable {
 	public int hashCode() {
 		int result = 17;
 
+		result = 37 * result + (getAction() == null ? 0 : this.getAction().hashCode());
 		result = 37 * result + (int) this.getId();
 		result = 37 * result + (getUsername() == null ? 0 : this.getUsername().hashCode());
 		result = 37 * result + (getPasshash() == null ? 0 : this.getPasshash().hashCode());

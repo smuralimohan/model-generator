@@ -1,5 +1,5 @@
 package com.ignis.model;
-// Generated 4 Aug, 2019 8:15:16 PM by Hibernate Tools 5.4.3.Final
+// Generated 17 Aug, 2019 12:44:50 AM by Hibernate Tools 5.4.3.Final
 
 import java.util.Date;
 

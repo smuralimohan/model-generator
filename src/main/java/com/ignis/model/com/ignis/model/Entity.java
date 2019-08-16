@@ -1,5 +1,5 @@
 package com.ignis.model;
-// Generated 4 Aug, 2019 8:15:16 PM by Hibernate Tools 5.4.3.Final
+// Generated 17 Aug, 2019 12:44:50 AM by Hibernate Tools 5.4.3.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -11,12 +11,18 @@ import java.util.Set;
 public class Entity implements java.io.Serializable {
 
 	private long id;
+	private RatingScale ratingScale;
 	private String name;
 	private String regNo;
 	private Date updatedAt;
 	private Long updatedBy;
+	private Set promotions = new HashSet(0);
 	private Set businessOwnerEntities = new HashSet(0);
 	private Set establishments = new HashSet(0);
+	private Set sysconfigCustoms = new HashSet(0);
+	private Set discounts = new HashSet(0);
+	private Set taxEntities = new HashSet(0);
+	private Set sysconfigArrCustoms = new HashSet(0);
 
 	public Entity() {
 	}
@@ -25,15 +31,22 @@ public class Entity implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Entity(long id, String name, String regNo, Date updatedAt, Long updatedBy, Set businessOwnerEntities,
-			Set establishments) {
+	public Entity(long id, RatingScale ratingScale, String name, String regNo, Date updatedAt, Long updatedBy,
+			Set promotions, Set businessOwnerEntities, Set establishments, Set sysconfigCustoms, Set discounts,
+			Set taxEntities, Set sysconfigArrCustoms) {
 		this.id = id;
+		this.ratingScale = ratingScale;
 		this.name = name;
 		this.regNo = regNo;
 		this.updatedAt = updatedAt;
 		this.updatedBy = updatedBy;
+		this.promotions = promotions;
 		this.businessOwnerEntities = businessOwnerEntities;
 		this.establishments = establishments;
+		this.sysconfigCustoms = sysconfigCustoms;
+		this.discounts = discounts;
+		this.taxEntities = taxEntities;
+		this.sysconfigArrCustoms = sysconfigArrCustoms;
 	}
 
 	public long getId() {
@@ -42,6 +55,14 @@ public class Entity implements java.io.Serializable {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public RatingScale getRatingScale() {
+		return this.ratingScale;
+	}
+
+	public void setRatingScale(RatingScale ratingScale) {
+		this.ratingScale = ratingScale;
 	}
 
 	public String getName() {
@@ -76,6 +97,14 @@ public class Entity implements java.io.Serializable {
 		this.updatedBy = updatedBy;
 	}
 
+	public Set getPromotions() {
+		return this.promotions;
+	}
+
+	public void setPromotions(Set promotions) {
+		this.promotions = promotions;
+	}
+
 	public Set getBusinessOwnerEntities() {
 		return this.businessOwnerEntities;
 	}
@@ -90,6 +119,38 @@ public class Entity implements java.io.Serializable {
 
 	public void setEstablishments(Set establishments) {
 		this.establishments = establishments;
+	}
+
+	public Set getSysconfigCustoms() {
+		return this.sysconfigCustoms;
+	}
+
+	public void setSysconfigCustoms(Set sysconfigCustoms) {
+		this.sysconfigCustoms = sysconfigCustoms;
+	}
+
+	public Set getDiscounts() {
+		return this.discounts;
+	}
+
+	public void setDiscounts(Set discounts) {
+		this.discounts = discounts;
+	}
+
+	public Set getTaxEntities() {
+		return this.taxEntities;
+	}
+
+	public void setTaxEntities(Set taxEntities) {
+		this.taxEntities = taxEntities;
+	}
+
+	public Set getSysconfigArrCustoms() {
+		return this.sysconfigArrCustoms;
+	}
+
+	public void setSysconfigArrCustoms(Set sysconfigArrCustoms) {
+		this.sysconfigArrCustoms = sysconfigArrCustoms;
 	}
 
 }
